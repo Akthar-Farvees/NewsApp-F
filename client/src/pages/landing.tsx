@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTheme } from "@/hooks/useTheme";
+import { Link } from "wouter";
 
 export default function Landing() {
   const { theme, toggleTheme } = useTheme();
@@ -21,7 +22,7 @@ export default function Landing() {
               </div>
               <h1 className="text-xl font-bold text-foreground">TechPulse</h1>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
@@ -31,14 +32,17 @@ export default function Landing() {
                 data-testid="button-theme-toggle"
                 aria-label="Toggle dark mode"
               >
-                {theme === 'dark' ? (
+                {theme === "dark" ? (
                   <i className="fas fa-sun text-yellow-400"></i>
                 ) : (
                   <i className="fas fa-moon text-slate-600"></i>
                 )}
               </Button>
-              
-              <Button onClick={handleGetStarted} data-testid="button-get-started">
+
+              <Button
+                onClick={handleGetStarted}
+                data-testid="button-get-started"
+              >
                 Get Started
               </Button>
             </div>
@@ -52,23 +56,51 @@ export default function Landing() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-                AI-Powered Tech News &{' '}
+                AI-Powered Tech News &{" "}
                 <span className="bg-gradient-to-r from-tech-blue to-tech-green bg-clip-text text-transparent">
                   Discussion Platform
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Stay ahead of the tech curve with intelligent news aggregation, AI-powered summaries, 
-                and context-aware discussions. Your personalized gateway to what matters in technology.
+                Stay ahead of the tech curve with intelligent news aggregation,
+                AI-powered summaries, and context-aware discussions. Your
+                personalized gateway to what matters in technology.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" onClick={handleGetStarted} className="px-8 py-3" data-testid="button-hero-get-started">
-                <i className="fas fa-rocket mr-2"></i>
-                Start Exploring
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3" data-testid="button-learn-more">
+                {/* <Link to="/news">
+                {" "}
+                <Button
+                  size="lg"
+                  onClick={handleGetStarted}
+                  className="px-8 py-3"
+                  data-testid="button-hero-get-started"
+                >
+                  <i className="fas fa-rocket mr-2"></i>
+                  Start Exploring
+                </Button>
+              </Link> */}
+
+              <Link to="/news">
+                {" "}
+                <Button
+                  size="lg"
+                  // onClick={handleGetStarted}
+                  className="px-8 py-3"
+                  data-testid="button-hero-get-started"
+                >
+                  <i className="fas fa-rocket mr-2"></i>
+                  Start Exploring
+                </Button>
+              </Link>
+
+              <Button
+                variant="outline"
+                size="lg"
+                className="px-8 py-3"
+                data-testid="button-learn-more"
+              >
                 <i className="fas fa-play mr-2"></i>
                 Learn More
               </Button>
@@ -85,8 +117,8 @@ export default function Landing() {
               Why TechPulse?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Combining the best of tech journalism with cutting-edge AI to deliver 
-              a superior news experience.
+              Combining the best of tech journalism with cutting-edge AI to
+              deliver a superior news experience.
             </p>
           </div>
 
@@ -100,8 +132,8 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Chat with articles using advanced AI. Get summaries, ask questions, 
-                  and discover insights you might have missed.
+                  Chat with articles using advanced AI. Get summaries, ask
+                  questions, and discover insights you might have missed.
                 </p>
               </CardContent>
             </Card>
@@ -115,8 +147,8 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Real-time analysis of trending topics, sentiment tracking, 
-                  and predictive insights about tech developments.
+                  Real-time analysis of trending topics, sentiment tracking, and
+                  predictive insights about tech developments.
                 </p>
               </CardContent>
             </Card>
@@ -130,8 +162,8 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Category-based filtering, personalized recommendations, 
-                  and intelligent content curation tailored to your interests.
+                  Category-based filtering, personalized recommendations, and
+                  intelligent content curation tailored to your interests.
                 </p>
               </CardContent>
             </Card>
@@ -145,8 +177,8 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Curated content from TechCrunch, The Verge, Hacker News, 
-                  and other top tech publications in one place.
+                  Curated content from TechCrunch, The Verge, Hacker News, and
+                  other top tech publications in one place.
                 </p>
               </CardContent>
             </Card>
@@ -160,7 +192,7 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Save articles, maintain reading lists, and access your 
+                  Save articles, maintain reading lists, and access your
                   bookmarked content offline whenever you need it.
                 </p>
               </CardContent>
@@ -175,8 +207,8 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Optimized for all devices with a responsive design that 
-                  works seamlessly on desktop, tablet, and mobile.
+                  Optimized for all devices with a responsive design that works
+                  seamlessly on desktop, tablet, and mobile.
                 </p>
               </CardContent>
             </Card>
@@ -193,9 +225,15 @@ export default function Landing() {
                 Ready to Transform Your Tech News Experience?
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join thousands of tech professionals who stay informed with AI-powered insights.
+                Join thousands of tech professionals who stay informed with
+                AI-powered insights.
               </p>
-              <Button size="lg" onClick={handleGetStarted} className="px-8 py-3" data-testid="button-cta-get-started">
+              <Button
+                size="lg"
+                onClick={handleGetStarted}
+                className="px-8 py-3"
+                data-testid="button-cta-get-started"
+              >
                 <i className="fas fa-bolt mr-2"></i>
                 Get Started Now
               </Button>
@@ -214,25 +252,44 @@ export default function Landing() {
               </div>
               <span className="font-semibold text-foreground">TechPulse</span>
             </div>
-            
+
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-foreground transition-colors" data-testid="link-about">
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                data-testid="link-about"
+              >
                 About
               </a>
-              <a href="#" className="hover:text-foreground transition-colors" data-testid="link-privacy">
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                data-testid="link-privacy"
+              >
                 Privacy
               </a>
-              <a href="#" className="hover:text-foreground transition-colors" data-testid="link-terms">
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                data-testid="link-terms"
+              >
                 Terms
               </a>
-              <a href="#" className="hover:text-foreground transition-colors" data-testid="link-contact">
+              <a
+                href="#"
+                className="hover:text-foreground transition-colors"
+                data-testid="link-contact"
+              >
                 Contact
               </a>
             </div>
           </div>
-          
+
           <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 TechPulse. All rights reserved. Powered by AI for a smarter tech news experience.</p>
+            <p>
+              &copy; 2024 TechPulse. All rights reserved. Powered by AI for a
+              smarter tech news experience.
+            </p>
           </div>
         </div>
       </footer>
