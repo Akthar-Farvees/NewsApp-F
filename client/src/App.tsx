@@ -14,8 +14,8 @@ function Router() {
   // Authentication removed - show news feed directly as home page
   return (
     <Switch>
-      <Route path="/" component={Landing} />
-      <Route path="/news" component={Home} />
+      {/* <Route path="/" component={Landing} /> */}
+      <Route path="/" component={Home} />
       <Route path="/bookmarks" component={Bookmarks} />
       <Route path="/analytics" component={Analytics} />
       <Route path="/article/:id" component={Home} />
