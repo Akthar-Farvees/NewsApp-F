@@ -6,9 +6,7 @@ import { Link } from "wouter";
 export default function Landing() {
   const { theme, toggleTheme } = useTheme();
 
-  const handleGetStarted = () => {
-    window.location.href = "/news";
-  };
+  // Remove handleGetStarted function - it's not needed!
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/20 to-background">
@@ -39,12 +37,12 @@ export default function Landing() {
                 )}
               </Button>
 
-              <Button
-                onClick={handleGetStarted}
-                data-testid="button-get-started"
-              >
-                Get Started
-              </Button>
+              {/* Use Link instead of onClick handler */}
+              <Link to="/news">
+                <Button data-testid="button-get-started">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -69,24 +67,10 @@ export default function Landing() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                {/* <Link to="/news">
-                {" "}
-                <Button
-                  size="lg"
-                  onClick={handleGetStarted}
-                  className="px-8 py-3"
-                  data-testid="button-hero-get-started"
-                >
-                  <i className="fas fa-rocket mr-2"></i>
-                  Start Exploring
-                </Button>
-              </Link> */}
-
+              {/* Clean implementation with Link */}
               <Link to="/news">
-                {" "}
                 <Button
                   size="lg"
-                  // onClick={handleGetStarted}
                   className="px-8 py-3"
                   data-testid="button-hero-get-started"
                 >
@@ -228,15 +212,17 @@ export default function Landing() {
                 Join thousands of tech professionals who stay informed with
                 AI-powered insights.
               </p>
-              <Button
-                size="lg"
-                onClick={handleGetStarted}
-                className="px-8 py-3"
-                data-testid="button-cta-get-started"
-              >
-                <i className="fas fa-bolt mr-2"></i>
-                Get Started Now
-              </Button>
+              {/* Use Link instead of onClick handler */}
+              <Link to="/news">
+                <Button
+                  size="lg"
+                  className="px-8 py-3"
+                  data-testid="button-cta-get-started"
+                >
+                  <i className="fas fa-bolt mr-2"></i>
+                  Get Started Now
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>
