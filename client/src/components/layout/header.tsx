@@ -7,6 +7,7 @@ import { useTheme } from "@/hooks/useTheme";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { isUnauthorizedError } from "@/lib/authUtils";
+import { Link } from "wouter";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -84,7 +85,8 @@ export default function Header({ onSearch, isConnected }: HeaderProps) {
               <i className="fas fa-bolt text-white text-sm sm:text-lg"></i>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-lg sm:text-xl font-bold text-foreground">TechPulse</h1>
+              <Link to="/news"><h1 className="text-lg sm:text-xl font-bold text-foreground">TechPulse</h1></Link>
+              
               {isConnected && (
                 <span className="text-xs text-tech-green flex items-center">
                   <i className="fas fa-circle text-xs mr-1"></i>
